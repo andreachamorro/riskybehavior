@@ -38,6 +38,90 @@ df$tobacco[df$chew_30 =="10 to 19 days"] <- 1
 df$tobacco[df$chew_30 =="20 to 29 days"] <- 1
 df$tobacco[df$chew_30 =="All 30 days"] <- 1
 
+df$ecstasy[df$x_30 =="0 times"] <- 0
+df$ecstasy[df$x_30 =="1 or 2 times"] <- 1
+df$ecstasy[df$x_30 =="3 to 9 times"] <- 1
+df$ecstasy[df$x_30 =="10 to 19 times"] <- 1
+df$ecstasy[df$x_30 =="20 to 39 times"] <- 1
+df$ecstasy[df$x_30 =="40 or more times"] <- 1
+
+#Oxy use
+df$oxy[df$oxy_30 =="0 times"] <- 0
+df$oxy[df$oxy_30 =="1 or 2 times"] <- 1
+df$oxy[df$oxy_30 =="3 to 9 times"] <- 1
+df$oxy[df$oxy_30 =="10 to 19 times"] <- 1
+df$oxy[df$oxy_30 =="20 to 39 times"] <- 1
+df$oxy[df$oxy_30 =="40 or more times"] <- 1
+
+#Other drug use
+df$otherdrug[df$oth_30 =="0 times"] <- 0
+df$otherdrug[df$oth_30 =="1 or 2 times"] <- 1
+df$otherdrug[df$oth_30 =="3 to 9 times"] <- 1
+df$otherdrug[df$oth_30 =="10 to 19 times"] <- 1
+df$otherdrug[df$oth_30 =="20 to 39 times"] <- 1
+df$otherdrug[df$oth_30 =="40 or more times"] <- 1
+
+#Sexual activity
+df$sexual[df$sex_ever =="No"] <- 0
+df$sexual[df$sex_ever =="Yes"] <- 1
+
+#Pregnancy
+df$pregnancy[df$pregnant =="No"] <- 0
+df$pregnancy[df$pregnant =="I have never had sexual intercourse"] <- 0
+df$pregnancy[df$pregnant =="Yes"] <- 1
+
+#Note that age variable is left and right censored
+df$age2[df$age=="13 years old or younger"] <- 13
+df$age2[df$age=="14 years old"] <- 14
+df$age2[df$age=="15 years old"] <- 15
+df$age2[df$age=="16 years old"] <- 16
+df$age2[df$age=="17 years old"] <- 17
+df$age2[df$age=="18 years old or older"] <- 18
+
+#Race = white
+df$white[df$race=="White"] <- 1
+df$white[df$race=="American Indian or Alaska Native"] <- 0
+df$white[df$race=="Asian or other Pacific Islander"] <- 0
+df$white[df$race=="Black"] <- 0
+df$white[df$race=="Hispanic or Latino"] <- 0
+df$white[df$race=="Other"] <- 0
+
+#Race = black
+df$black[df$race=="White"] <- 0
+df$black[df$race=="American Indian or Alaska Native"] <- 0
+df$black[df$race=="Asian or other Pacific Islander"] <- 0
+df$black[df$race=="Black"] <- 1
+df$black[df$race=="Hispanic or Latino"] <- 0
+df$black[df$race=="Other"] <- 0
+
+#Race = asian
+df$asian[df$race=="White"] <- 0
+df$asian[df$race=="American Indian or Alaska Native"] <- 0
+df$asian[df$race=="Asian or other Pacific Islander"] <- 1
+df$asian[df$race=="Black"] <- 0
+df$asian[df$race=="Hispanic or Latino"] <- 0
+df$asian[df$race=="Other"] <- 0
+
+#Race = hispanic
+df$hispanic[df$race=="White"] <- 0
+df$hispanic[df$race=="American Indian or Alaska Native"] <- 0
+df$hispanic[df$race=="Asian or other Pacific Islander"] <- 0
+df$hispanic[df$race=="Black"] <- 0
+df$hispanic[df$race=="Hispanic or Latino"] <- 1
+df$hispanic[df$race=="Other"] <- 0
+
+#Race = other
+df$otherrace[df$race=="White"] <- 0
+df$otherrace[df$race=="American Indian or Alaska Native"] <- 1
+df$otherrace[df$race=="Asian or other Pacific Islander"] <- 0
+df$otherrace[df$race=="Black"] <- 0
+df$otherrace[df$race=="Hispanic or Latino"] <- 0
+df$otherrace[df$race=="Other"] <- 1
+
+#Gender
+df$female[df$GENDER=="Male"] <- 0
+df$female[df$GENDER=="Female"] <- 1
+
 describe(df$tobacco)
  
 describe(df$alc_30)
