@@ -1,0 +1,18 @@
+###Partition###
+
+
+
+
+library(dplyr)
+
+dftrain <- df[sample(nrow(df), 
+                     size = round(0.7*nrow(df)),
+                     replace = F),]
+
+dftest <- anti_join(df, dftrain, by = "id")
+
+dfval <- dftest[sample(nrow(dftest), 
+                       size = round(0.5*nrow(dftest)),
+                       replace = F),]
+
+dftest <- anti_join(dftest, dfval, by = "id")
