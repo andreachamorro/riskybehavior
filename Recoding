@@ -1,4 +1,4 @@
-###Recoding variables 
+###Recoding variables###
 
 ##Grades
 summary(df$skl_gra)
@@ -9,13 +9,13 @@ df$grades[df$skl_gra =="Mostly D's"] <- 4
 df$grades[df$skl_gra =="Mostly E's or F's"] <- 5
 count(df$grades)
 
-##In Gang
+##Gang
 summary(df$gang)
 df$ingang[df$gang =="Yes"] <- 1
 df$ingang[df$gang =="No"] <- 0
 count(df$ingang)
 
-##Cig Use 
+##Cig  
 describe(df$cig_30)
 df$ciguse[df$cig_30 =="0 days"] <- 0
 df$ciguse[df$cig_30 =="1 or 2 days"] <- 1
@@ -52,7 +52,7 @@ df$oxy[df$oxy_30 =="10 to 19 times"] <- 1
 df$oxy[df$oxy_30 =="20 to 39 times"] <- 1
 df$oxy[df$oxy_30 =="40 or more times"] <- 1
 
-#Otherdrug
+#Other
 df$otherdrug[df$oth_30 =="0 times"] <- 0
 df$otherdrug[df$oth_30 =="1 or 2 times"] <- 1
 df$otherdrug[df$oth_30 =="3 to 9 times"] <- 1
@@ -69,6 +69,7 @@ df$pregnancy[df$pregnant =="No"] <- 0
 df$pregnancy[df$pregnant =="I have never had sexual intercourse"] <- 0
 df$pregnancy[df$pregnant =="Yes"] <- 1
 
+#Age
 #Note that age variable is left and right censored
 df$age2[df$age=="13 years old or younger"] <- 13
 df$age2[df$age=="14 years old"] <- 14
@@ -77,7 +78,7 @@ df$age2[df$age=="16 years old"] <- 16
 df$age2[df$age=="17 years old"] <- 17
 df$age2[df$age=="18 years old or older"] <- 18
 
-#Race = white
+#Race = White
 df$white[df$race=="White"] <- 1
 df$white[df$race=="American Indian or Alaska Native"] <- 0
 df$white[df$race=="Asian or other Pacific Islander"] <- 0
@@ -85,7 +86,7 @@ df$white[df$race=="Black"] <- 0
 df$white[df$race=="Hispanic or Latino"] <- 0
 df$white[df$race=="Other"] <- 0
 
-#Race = black
+#Race = Black
 df$black[df$race=="White"] <- 0
 df$black[df$race=="American Indian or Alaska Native"] <- 0
 df$black[df$race=="Asian or other Pacific Islander"] <- 0
@@ -93,7 +94,7 @@ df$black[df$race=="Black"] <- 1
 df$black[df$race=="Hispanic or Latino"] <- 0
 df$black[df$race=="Other"] <- 0
 
-#Race = asian
+#Race = Asian
 df$asian[df$race=="White"] <- 0
 df$asian[df$race=="American Indian or Alaska Native"] <- 0
 df$asian[df$race=="Asian or other Pacific Islander"] <- 1
@@ -101,7 +102,7 @@ df$asian[df$race=="Black"] <- 0
 df$asian[df$race=="Hispanic or Latino"] <- 0
 df$asian[df$race=="Other"] <- 0
 
-#Race = hispanic
+#Race = Hispanic
 df$hispanic[df$race=="White"] <- 0
 df$hispanic[df$race=="American Indian or Alaska Native"] <- 0
 df$hispanic[df$race=="Asian or other Pacific Islander"] <- 0
@@ -109,7 +110,7 @@ df$hispanic[df$race=="Black"] <- 0
 df$hispanic[df$race=="Hispanic or Latino"] <- 1
 df$hispanic[df$race=="Other"] <- 0
 
-#Race = other
+#Race = Other
 df$otherrace[df$race=="White"] <- 0
 df$otherrace[df$race=="American Indian or Alaska Native"] <- 1
 df$otherrace[df$race=="Asian or other Pacific Islander"] <- 0
@@ -121,10 +122,8 @@ df$otherrace[df$race=="Other"] <- 1
 df$female[df$GENDER=="Male"] <- 0
 df$female[df$GENDER=="Female"] <- 1
 
-describe(df$tobacco)
- 
+#Alcohol
 describe(df$alc_30)
-
 df$alcohol[df$alc_30 =="0 days"] <- 0
 df$alcohol[df$alc_30 =="1 or 2 days"] <- 1
 df$alcohol[df$alc_30 =="3 to 5 days"] <- 1
@@ -132,38 +131,37 @@ df$alcohol[df$alc_30 =="6 to 9 days"] <- 1
 df$alcohol[df$alc_30 =="10 to 19 days"] <- 1
 df$alcohol[df$alc_30 =="20 to 29 days"] <- 1
 df$alcohol[df$alc_30 =="All 30 days"] <- 1
-
 describe(df$alcohol)
 
+#Marijuana
 describe(df$pot_30)
-
 df$marijuana[df$pot_30 =="0 times"] <- 0
 df$marijuana[df$pot_30 =="1 or 2 times"] <- 1
 df$marijuana[df$pot_30 =="3 to 9 times"] <- 1
 df$marijuana[df$pot_30 =="10 to 19 times"] <- 1
 df$marijuana[df$pot_30 =="20 to 39 times"] <- 1
 df$marijuana[df$pot_30 =="40 or more times"] <- 1
-
 describe(df$marijuana)
 
+#Heroin
 describe(df$her_30)
-
 df$heroin[df$her_30 =="0 times"] <- 0
 df$heroin[df$her_30 =="1 or 2 times"] <- 1
 df$heroin[df$her_30 =="3 to 9 times"] <- 1
 df$heroin[df$her_30 =="10 to 19 times"] <- 1
 df$heroin[df$her_30 =="20 to 39 times"] <- 1
 df$heroin[df$her_30 =="40 or more times"] <- 1
-
 describe(df$heroin)
 
-describe(df$meth_30)
 
+#Meth
+describe(df$meth_30)
 df$meth[df$meth_30 =="0 times"] <- 0
 df$meth[df$meth_30 =="1 or 2 times"] <- 1
 df$meth[df$meth_30 =="3 to 9 times"] <- 1
 df$meth[df$meth_30 =="10 to 19 times"] <- 1
 df$meth[df$meth_30 =="20 to 39 times"] <- 1
 df$meth[df$meth_30 =="40 or more times"] <- 1
-
 describe(df$meth)
+
+
