@@ -1,6 +1,7 @@
 ###Recoding variables###
 
 library(plyr)
+library(Hmisc)
 
 ##Grades
 summary(df$skl_gra)
