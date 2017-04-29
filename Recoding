@@ -1,5 +1,7 @@
 ###Recoding variables###
 
+library(plyr)
+
 ##Grades
 summary(df$skl_gra)
 df$grades[df$skl_gra =="Mostly A's"] <- 1
@@ -9,13 +11,65 @@ df$grades[df$skl_gra =="Mostly D's"] <- 4
 df$grades[df$skl_gra =="Mostly E's or F's"] <- 5
 count(df$grades)
 
-##Gang
+##Ingang
 summary(df$gang)
 df$ingang[df$gang =="Yes"] <- 1
 df$ingang[df$gang =="No"] <- 0
 count(df$ingang)
 
-##Cig  
+##schoolaltercation
+summary(df$fit_skl)
+df$schoolaltercation[df$fit_skl =="0 times"] <- 0
+df$schoolaltercation[df$fit_skl =="1 time"] <- 1
+df$schoolaltercation[df$fit_skl =="2 or 3 times"] <- 1
+df$schoolaltercation[df$fit_skl =="4 or 5 times"] <- 1
+df$schoolaltercation[df$fit_skl =="6 or 7 times"] <- 1
+df$schoolaltercation[df$fit_skl =="8 or 9 times"] <- 1
+df$schoolaltercation[df$fit_skl =="10 or 11 times"] <- 1
+df$schoolaltercation[df$fit_skl =="12 or more times"] <- 1
+count(df$schoolaltercation)
+
+##outsidealtercation
+summary(df$fit_out)
+df$outsidealtercation[df$fit_out =="0 times"] <- 0
+df$outsidealtercation[df$fit_out =="1 time"] <- 1
+df$outsidealtercation[df$fit_out =="2 or 3 times"] <- 1
+df$outsidealtercation[df$fit_out =="4 or 5 times"] <- 1
+df$outsidealtercation[df$fit_out =="6 or 7 times"] <- 1
+df$outsidealtercation[df$fit_out =="8 or 9 times"] <- 1
+df$outsidealtercation[df$fit_out =="10 or 11 times"] <- 1
+df$outsidealtercation[df$fit_out =="12 or more times"] <- 1
+count(df$outsidealtercation)
+
+##schoolweapon
+summary(df$weap_skl)
+df$schoolweapon[df$weap_skl =="0 days"] <- 0
+df$schoolweapon[df$weap_skl =="1 day"] <- 1
+df$schoolweapon[df$weap_skl =="2 or 3 days"] <- 1
+df$schoolweapon[df$weap_skl=="4 or 5 days"] <- 1
+df$schoolweapon[df$weap_skl =="6 or more days"] <- 1
+count(df$schoolweapon)
+
+##outsideweapon
+summary(df$weap_out)
+df$outsideweapon[df$weap_out =="0 days"] <- 0
+df$outsideweapon[df$weap_out =="1 day"] <- 1
+df$outsideweapon[df$weap_out =="2 or 3 days"] <- 1
+df$outsideweapon[df$weap_out=="4 or 5 days"] <- 1
+df$outsideweapon[df$weap_out =="6 or more days"] <- 1
+count(df$outsideweapon)
+
+##hurtingself
+summary(df$hurtself)
+df$hurtingself[df$hurtself =="0 times"] <- 0
+df$hurtingself[df$hurtself =="1 or 2 times"] <- 1
+df$hurtingself[df$hurtself =="3 to 5 times"] <- 1
+df$hurtingself[df$hurtself =="6 to 9 times"] <- 1
+df$hurtingself[df$hurtself =="10 to 19 times"] <- 1
+df$hurtingself[df$hurtself =="20 or more times"] <- 1
+count(df$hurtingself)
+
+##CigUse  
 describe(df$cig_30)
 df$ciguse[df$cig_30 =="0 days"] <- 0
 df$ciguse[df$cig_30 =="1 or 2 days"] <- 1
@@ -44,7 +98,7 @@ df$ecstasy[df$x_30 =="10 to 19 times"] <- 1
 df$ecstasy[df$x_30 =="20 to 39 times"] <- 1
 df$ecstasy[df$x_30 =="40 or more times"] <- 1
 
-#Oxy 
+##Oxy 
 df$oxy[df$oxy_30 =="0 times"] <- 0
 df$oxy[df$oxy_30 =="1 or 2 times"] <- 1
 df$oxy[df$oxy_30 =="3 to 9 times"] <- 1
@@ -52,7 +106,7 @@ df$oxy[df$oxy_30 =="10 to 19 times"] <- 1
 df$oxy[df$oxy_30 =="20 to 39 times"] <- 1
 df$oxy[df$oxy_30 =="40 or more times"] <- 1
 
-#Other
+##Other
 df$otherdrug[df$oth_30 =="0 times"] <- 0
 df$otherdrug[df$oth_30 =="1 or 2 times"] <- 1
 df$otherdrug[df$oth_30 =="3 to 9 times"] <- 1
@@ -60,16 +114,16 @@ df$otherdrug[df$oth_30 =="10 to 19 times"] <- 1
 df$otherdrug[df$oth_30 =="20 to 39 times"] <- 1
 df$otherdrug[df$oth_30 =="40 or more times"] <- 1
 
-#Sexual 
+##Sexual 
 df$sexual[df$sex_ever =="No"] <- 0
 df$sexual[df$sex_ever =="Yes"] <- 1
 
-#Pregnancy
+##Pregnancy
 df$pregnancy[df$pregnant =="No"] <- 0
 df$pregnancy[df$pregnant =="I have never had sexual intercourse"] <- 0
 df$pregnancy[df$pregnant =="Yes"] <- 1
 
-#Age
+##Age
 #Note that age variable is left and right censored
 df$age2[df$age=="13 years old or younger"] <- 13
 df$age2[df$age=="14 years old"] <- 14
@@ -77,6 +131,8 @@ df$age2[df$age=="15 years old"] <- 15
 df$age2[df$age=="16 years old"] <- 16
 df$age2[df$age=="17 years old"] <- 17
 df$age2[df$age=="18 years old or older"] <- 18
+
+##Race
 
 #Race = White
 df$white[df$race=="White"] <- 1
@@ -118,11 +174,11 @@ df$otherrace[df$race=="Black"] <- 0
 df$otherrace[df$race=="Hispanic or Latino"] <- 0
 df$otherrace[df$race=="Other"] <- 1
 
-#Gender
+##Gender
 df$female[df$GENDER=="Male"] <- 0
 df$female[df$GENDER=="Female"] <- 1
 
-#Alcohol
+##Alcohol
 describe(df$alc_30)
 df$alcohol[df$alc_30 =="0 days"] <- 0
 df$alcohol[df$alc_30 =="1 or 2 days"] <- 1
@@ -133,7 +189,7 @@ df$alcohol[df$alc_30 =="20 to 29 days"] <- 1
 df$alcohol[df$alc_30 =="All 30 days"] <- 1
 describe(df$alcohol)
 
-#Marijuana
+##Marijuana
 describe(df$pot_30)
 df$marijuana[df$pot_30 =="0 times"] <- 0
 df$marijuana[df$pot_30 =="1 or 2 times"] <- 1
@@ -143,7 +199,7 @@ df$marijuana[df$pot_30 =="20 to 39 times"] <- 1
 df$marijuana[df$pot_30 =="40 or more times"] <- 1
 describe(df$marijuana)
 
-#Heroin
+##Heroin
 describe(df$her_30)
 df$heroin[df$her_30 =="0 times"] <- 0
 df$heroin[df$her_30 =="1 or 2 times"] <- 1
@@ -154,7 +210,7 @@ df$heroin[df$her_30 =="40 or more times"] <- 1
 describe(df$heroin)
 
 
-#Meth
+##Meth
 describe(df$meth_30)
 df$meth[df$meth_30 =="0 times"] <- 0
 df$meth[df$meth_30 =="1 or 2 times"] <- 1
