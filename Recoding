@@ -11,6 +11,14 @@ df$grades[df$skl_gra =="Mostly D's"] <- 4
 df$grades[df$skl_gra =="Mostly E's or F's"] <- 5
 count(df$grades)
 
+##Grades option 2
+df$grades2[df$skl_gra =="Mostly A's"] <- "Mostly A's"
+df$grades2[df$skl_gra =="Mostly B's"] <- "Mostly B's"
+df$grades2[df$skl_gra =="Mostly C's"] <- "Mostly C's"
+df$grades2[df$skl_gra =="Mostly D's"] <- "Mostly D's"
+df$grades2[df$skl_gra =="Mostly E's or F's"] <- "Mostly E's or F's"
+count(df$grades2)
+
 ##Ingang
 summary(df$gang)
 df$ingang[df$gang =="Yes"] <- 1
