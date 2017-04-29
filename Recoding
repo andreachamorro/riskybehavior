@@ -209,7 +209,6 @@ df$heroin[df$her_30 =="20 to 39 times"] <- 1
 df$heroin[df$her_30 =="40 or more times"] <- 1
 describe(df$heroin)
 
-
 ##Meth
 describe(df$meth_30)
 df$meth[df$meth_30 =="0 times"] <- 0
