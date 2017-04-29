@@ -18,7 +18,7 @@ dfval <- dftest[sample(nrow(dftest),
 dftest <- anti_join(dftest, dfval, by = "id")
 
 set.seed(100)
-rand <- runif(nrow(df))
-train <- df[rand > 0.3,]
-validate <- df[rand > 0.15 & rand <= 0.3,]
-test <- df[rand <= 0.15,]
+rand <- runif(nrow(df2))
+train <- df2[rand > 0.3,]
+validate <- df2[rand > 0.15 & rand <= 0.3,]
+test <- df2[rand <= 0.15,]
