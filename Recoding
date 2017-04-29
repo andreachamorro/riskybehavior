@@ -229,6 +229,6 @@ df$meth[df$meth_30 =="40 or more times"] <- 1
 describe(df$meth)
 
 ###New data frame
-df2 <- df[c(1:3, 12, 194:218)]
+df2 <- df[c(1:3, 12, 194:219)]
 
 
