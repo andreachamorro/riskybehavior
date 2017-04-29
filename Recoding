@@ -1,6 +1,6 @@
 ###Recoding variables 
 
-##skl_gra
+##Grades
 summary(df$skl_gra)
 df$grades[df$skl_gra =="Mostly A's"] <- 1
 df$grades[df$skl_gra =="Mostly B's"] <- 2
@@ -9,14 +9,14 @@ df$grades[df$skl_gra =="Mostly D's"] <- 4
 df$grades[df$skl_gra =="Mostly E's or F's"] <- 5
 count(df$grades)
 
-##gang
+##In Gang
 summary(df$gang)
 df$ingang[df$gang =="Yes"] <- 1
 df$ingang[df$gang =="No"] <- 0
 count(df$ingang)
 
+##Cig Use 
 describe(df$cig_30)
-
 df$ciguse[df$cig_30 =="0 days"] <- 0
 df$ciguse[df$cig_30 =="1 or 2 days"] <- 1
 df$ciguse[df$cig_30 =="3 to 5 days"] <- 1
@@ -24,12 +24,10 @@ df$ciguse[df$cig_30 =="6 to 9 days"] <- 1
 df$ciguse[df$cig_30 =="10 to 19 days"] <- 1
 df$ciguse[df$cig_30 =="20 to 29 days"] <- 1
 df$ciguse[df$cig_30 =="All 30 days"] <- 1
-
 describe(df$ciguse)
 
-
+##Tobacco 
 describe(df$chew_30)
-
 df$tobacco[df$chew_30 =="0 days"] <- 0
 df$tobacco[df$chew_30 =="1 or 2 days"] <- 1
 df$tobacco[df$chew_30 =="3 to 5 days"] <- 1
@@ -38,6 +36,7 @@ df$tobacco[df$chew_30 =="10 to 19 days"] <- 1
 df$tobacco[df$chew_30 =="20 to 29 days"] <- 1
 df$tobacco[df$chew_30 =="All 30 days"] <- 1
 
+##Ectasy 
 df$ecstasy[df$x_30 =="0 times"] <- 0
 df$ecstasy[df$x_30 =="1 or 2 times"] <- 1
 df$ecstasy[df$x_30 =="3 to 9 times"] <- 1
@@ -45,7 +44,7 @@ df$ecstasy[df$x_30 =="10 to 19 times"] <- 1
 df$ecstasy[df$x_30 =="20 to 39 times"] <- 1
 df$ecstasy[df$x_30 =="40 or more times"] <- 1
 
-#Oxy use
+#Oxy 
 df$oxy[df$oxy_30 =="0 times"] <- 0
 df$oxy[df$oxy_30 =="1 or 2 times"] <- 1
 df$oxy[df$oxy_30 =="3 to 9 times"] <- 1
@@ -53,7 +52,7 @@ df$oxy[df$oxy_30 =="10 to 19 times"] <- 1
 df$oxy[df$oxy_30 =="20 to 39 times"] <- 1
 df$oxy[df$oxy_30 =="40 or more times"] <- 1
 
-#Other drug use
+#Otherdrug
 df$otherdrug[df$oth_30 =="0 times"] <- 0
 df$otherdrug[df$oth_30 =="1 or 2 times"] <- 1
 df$otherdrug[df$oth_30 =="3 to 9 times"] <- 1
@@ -61,7 +60,7 @@ df$otherdrug[df$oth_30 =="10 to 19 times"] <- 1
 df$otherdrug[df$oth_30 =="20 to 39 times"] <- 1
 df$otherdrug[df$oth_30 =="40 or more times"] <- 1
 
-#Sexual activity
+#Sexual 
 df$sexual[df$sex_ever =="No"] <- 0
 df$sexual[df$sex_ever =="Yes"] <- 1
 
