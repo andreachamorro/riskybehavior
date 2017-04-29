@@ -231,4 +231,6 @@ describe(df$meth)
 ###New data frame
 df2 <- df[c(1:3, 12, 194:219)]
 
+#Remove observations where grades2=NA
+df2 <- subset(df2, !is.na(grades2))
 
