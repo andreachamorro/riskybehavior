@@ -14,3 +14,73 @@ summary(df$gang)
 df$ingang[df$gang =="Yes"] <- 1
 df$ingang[df$gang =="No"] <- 0
 count(df$ingang)
+
+describe(df$cig_30)
+
+df$ciguse[df$cig_30 =="0 days"] <- 0
+df$ciguse[df$cig_30 =="1 or 2 days"] <- 1
+df$ciguse[df$cig_30 =="3 to 5 days"] <- 1
+df$ciguse[df$cig_30 =="6 to 9 days"] <- 1
+df$ciguse[df$cig_30 =="10 to 19 days"] <- 1
+df$ciguse[df$cig_30 =="20 to 29 days"] <- 1
+df$ciguse[df$cig_30 =="All 30 days"] <- 1
+
+describe(df$ciguse)
+
+
+describe(df$chew_30)
+
+df$tobacco[df$chew_30 =="0 days"] <- 0
+df$tobacco[df$chew_30 =="1 or 2 days"] <- 1
+df$tobacco[df$chew_30 =="3 to 5 days"] <- 1
+df$tobacco[df$chew_30 =="6 to 9 days"] <- 1
+df$tobacco[df$chew_30 =="10 to 19 days"] <- 1
+df$tobacco[df$chew_30 =="20 to 29 days"] <- 1
+df$tobacco[df$chew_30 =="All 30 days"] <- 1
+
+describe(df$tobacco)
+ 
+describe(df$alc_30)
+
+df$alcohol[df$alc_30 =="0 days"] <- 0
+df$alcohol[df$alc_30 =="1 or 2 days"] <- 1
+df$alcohol[df$alc_30 =="3 to 5 days"] <- 1
+df$alcohol[df$alc_30 =="6 to 9 days"] <- 1
+df$alcohol[df$alc_30 =="10 to 19 days"] <- 1
+df$alcohol[df$alc_30 =="20 to 29 days"] <- 1
+df$alcohol[df$alc_30 =="All 30 days"] <- 1
+
+describe(df$alcohol)
+
+describe(df$pot_30)
+
+df$marijuana[df$pot_30 =="0 times"] <- 0
+df$marijuana[df$pot_30 =="1 or 2 times"] <- 1
+df$marijuana[df$pot_30 =="3 to 9 times"] <- 1
+df$marijuana[df$pot_30 =="10 to 19 times"] <- 1
+df$marijuana[df$pot_30 =="20 to 39 times"] <- 1
+df$marijuana[df$pot_30 =="40 or more times"] <- 1
+
+describe(df$marijuana)
+
+describe(df$her_30)
+
+df$heroin[df$her_30 =="0 times"] <- 0
+df$heroin[df$her_30 =="1 or 2 times"] <- 1
+df$heroin[df$her_30 =="3 to 9 times"] <- 1
+df$heroin[df$her_30 =="10 to 19 times"] <- 1
+df$heroin[df$her_30 =="20 to 39 times"] <- 1
+df$heroin[df$her_30 =="40 or more times"] <- 1
+
+describe(df$heroin)
+
+describe(df$meth_30)
+
+df$meth[df$meth_30 =="0 times"] <- 0
+df$meth[df$meth_30 =="1 or 2 times"] <- 1
+df$meth[df$meth_30 =="3 to 9 times"] <- 1
+df$meth[df$meth_30 =="10 to 19 times"] <- 1
+df$meth[df$meth_30 =="20 to 39 times"] <- 1
+df$meth[df$meth_30 =="40 or more times"] <- 1
+
+describe(df$meth)
